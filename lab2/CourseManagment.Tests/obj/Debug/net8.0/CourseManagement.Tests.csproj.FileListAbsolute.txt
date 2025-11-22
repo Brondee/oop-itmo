@@ -1,0 +1,6 @@
+/Users/artemkolpakov/Documents/itmo/oop/lab2/CourseManagment.Tests/obj/Debug/net8.0/CourseManagement.Tests.csproj.AssemblyReference.cache
+/Users/artemkolpakov/Documents/itmo/oop/lab2/CourseManagment.Tests/obj/Debug/net8.0/CourseManagement.Tests.GeneratedMSBuildEditorConfig.editorconfig
+/Users/artemkolpakov/Documents/itmo/oop/lab2/CourseManagment.Tests/obj/Debug/net8.0/CourseManagement.Tests.AssemblyInfoInputs.cache
+/Users/artemkolpakov/Documents/itmo/oop/lab2/CourseManagment.Tests/obj/Debug/net8.0/CourseManagement.Tests.AssemblyInfo.cs
+/Users/artemkolpakov/Documents/itmo/oop/lab2/CourseManagment.Tests/obj/Debug/net8.0/CourseManagement.Tests.csproj.CoreCompileInputs.cache
+/Users/artemkolpakov/Documents/itmo/oop/lab2/CourseManagment.Tests/obj/Debug/net8.0/CourseManagement.Tests.sourcelink.json

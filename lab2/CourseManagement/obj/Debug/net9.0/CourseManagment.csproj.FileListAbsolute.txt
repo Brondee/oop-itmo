@@ -1,0 +1,15 @@
+/Users/artemkolpakov/Documents/itmo/oop/lab2/CourseManagement/bin/Debug/net9.0/CourseManagment.deps.json
+/Users/artemkolpakov/Documents/itmo/oop/lab2/CourseManagement/bin/Debug/net9.0/CourseManagment.dll
+/Users/artemkolpakov/Documents/itmo/oop/lab2/CourseManagement/bin/Debug/net9.0/CourseManagment.pdb
+/Users/artemkolpakov/Documents/itmo/oop/lab2/CourseManagement/obj/Debug/net9.0/CourseManagment.GeneratedMSBuildEditorConfig.editorconfig
+/Users/artemkolpakov/Documents/itmo/oop/lab2/CourseManagement/obj/Debug/net9.0/CourseManagment.AssemblyInfoInputs.cache
+/Users/artemkolpakov/Documents/itmo/oop/lab2/CourseManagement/obj/Debug/net9.0/CourseManagment.AssemblyInfo.cs
+/Users/artemkolpakov/Documents/itmo/oop/lab2/CourseManagement/obj/Debug/net9.0/CourseManagment.csproj.CoreCompileInputs.cache
+/Users/artemkolpakov/Documents/itmo/oop/lab2/CourseManagement/obj/Debug/net9.0/CourseManagment.sourcelink.json
+/Users/artemkolpakov/Documents/itmo/oop/lab2/CourseManagement/obj/Debug/net9.0/CourseManagment.dll
+/Users/artemkolpakov/Documents/itmo/oop/lab2/CourseManagement/obj/Debug/net9.0/refint/CourseManagment.dll
+/Users/artemkolpakov/Documents/itmo/oop/lab2/CourseManagement/obj/Debug/net9.0/CourseManagment.pdb
+/Users/artemkolpakov/Documents/itmo/oop/lab2/CourseManagement/obj/Debug/net9.0/ref/CourseManagment.dll
+/Users/artemkolpakov/Documents/itmo/oop/lab2/CourseManagement/bin/Debug/net9.0/CourseManagment
+/Users/artemkolpakov/Documents/itmo/oop/lab2/CourseManagement/bin/Debug/net9.0/CourseManagment.runtimeconfig.json
+/Users/artemkolpakov/Documents/itmo/oop/lab2/CourseManagement/obj/Debug/net9.0/CourseManagment.genruntimeconfig.cache
