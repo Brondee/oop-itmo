@@ -1,0 +1,7 @@
+/Users/artemkolpakov/Documents/itmo/oop/lab3-new/GameInventory.Tests/bin/Debug/net9.0/.msCoverageSourceRootsMapping_CourseManagement.Tests
+/Users/artemkolpakov/Documents/itmo/oop/lab3-new/GameInventory.Tests/obj/Debug/net9.0/CourseManagement.Tests.csproj.AssemblyReference.cache
+/Users/artemkolpakov/Documents/itmo/oop/lab3-new/GameInventory.Tests/obj/Debug/net9.0/CourseManagement.Tests.GeneratedMSBuildEditorConfig.editorconfig
+/Users/artemkolpakov/Documents/itmo/oop/lab3-new/GameInventory.Tests/obj/Debug/net9.0/CourseManagement.Tests.AssemblyInfoInputs.cache
+/Users/artemkolpakov/Documents/itmo/oop/lab3-new/GameInventory.Tests/obj/Debug/net9.0/CourseManagement.Tests.AssemblyInfo.cs
+/Users/artemkolpakov/Documents/itmo/oop/lab3-new/GameInventory.Tests/obj/Debug/net9.0/CourseManagement.Tests.csproj.CoreCompileInputs.cache
+/Users/artemkolpakov/Documents/itmo/oop/lab3-new/GameInventory.Tests/obj/Debug/net9.0/CourseManagement.Tests.sourcelink.json
