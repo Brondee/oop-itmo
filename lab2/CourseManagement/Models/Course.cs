@@ -3,6 +3,7 @@ namespace CourseManagement.Models;
 public abstract class Course
 {
   private readonly List<Student> _students = new();
+  // public  List<Student> Students { get; private set; }
 
   public int Id { get; }
   public string Title { get; private set; }
