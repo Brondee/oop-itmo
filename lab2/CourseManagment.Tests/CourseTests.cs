@@ -1,4 +1,3 @@
-using System.Linq;
 using CourseManagement.Models;
 using Xunit;
 
@@ -7,49 +6,49 @@ namespace CourseManagement.Tests;
 public class CourseTests
 {
   [Fact]
-  public void EnrollStudent_ShouldAddStudent()
+  public void ShouldAddStudent()
   {
-    var course = new OnlineCourse(1, "C#", "Moodle", "https://example.com");
-    var student = new Student(1, "Петров");
+    OnlineCourse course = new OnlineCourse(1, "C#", "Moodle", "https://example.com");
+    Student student = new Student(1, "Петров");
 
     course.EnrollStudent(student);
 
-    Assert.Single(course.Students);
-    Assert.Equal(student, course.Students.First());
+    Assert.Equal(1, course.Students.Count);
+    Assert.Equal(student, course.Students[0]);
   }
 
   [Fact]
-  public void EnrollStudent_ShouldNotAddDuplicates()
+  public void ShouldNotAddDuplicates()
   {
-    var course = new OnlineCourse(1, "C#", "Moodle", "https://example.com");
-    var student = new Student(1, "Петров");
+    OnlineCourse course = new OnlineCourse(1, "C#", "Moodle", "https://example.com");
+    Student student = new Student(1, "Петров");
 
     course.EnrollStudent(student);
     course.EnrollStudent(student);
 
-    Assert.Single(course.Students);
+    Assert.Equal(1, course.Students.Count);
   }
 
   [Fact]
-  public void RemoveStudent_ShouldRemoveExistingStudent()
+  public void ShouldRemoveExistingStudent()
   {
-    var course = new OfflineCourse(1, "Java", "Корпус A", "101");
-    var student = new Student(1, "Петров");
+    OfflineCourse course = new OfflineCourse(1, "Java", "Корпус A", "101");
+    Student student = new Student(1, "Петров");
 
     course.EnrollStudent(student);
     course.RemoveStudent(student.Id);
 
-    Assert.Empty(course.Students);
+    Assert.Equal(0, course.Students.Count);
   }
 
   [Fact]
-  public void GetCourseInfo_ShouldReturnDifferentText_ForDifferentTypes()
+  public void ShouldReturnDifferentTextForDifferentTypes()
   {
     Course online = new OnlineCourse(1, "C#", "Moodle", "https://example.com");
     Course offline = new OfflineCourse(2, "Java", "Корпус A", "101");
 
-    var onlineText = online.GetCourseInfo();
-    var offlineText = offline.GetCourseInfo();
+    string onlineText = online.GetCourseInfo();
+    string offlineText = offline.GetCourseInfo();
 
     Assert.Contains("Онлайн-курс", onlineText);
     Assert.Contains("Офлайн-курс", offlineText);

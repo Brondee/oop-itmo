@@ -1,44 +1,75 @@
+using System;
+using System.Collections.Generic;
 using CourseManagement.Models;
 
 namespace CourseManagement.Services;
 
 public class CourseManager
 {
-  private readonly List<Course> _courses = new();
-
-  public IReadOnlyCollection<Course> Courses => _courses.AsReadOnly();
+  public List<Course> Courses { get; } = new List<Course>();
 
   public void AddCourse(Course course)
   {
-    if (course == null) throw new ArgumentNullException(nameof(course));
+    if (course == null)
+    {
+      throw new ArgumentNullException(nameof(course));
+    }
 
-    if (_courses.Any(c => c.Id == course.Id))
-      throw new InvalidOperationException($"Курс с Id={course.Id} уже существует");
+    foreach (Course existing in Courses)
+    {
+      if (existing.Id == course.Id)
+      {
+        throw new InvalidOperationException("Курс с Id=" + course.Id + " уже существует");
+      }
+    }
 
-    _courses.Add(course);
+    Courses.Add(course);
   }
 
   public bool RemoveCourse(int courseId)
   {
-    var course = _courses.FirstOrDefault(c => c.Id == courseId);
-    if (course == null)
-      return false;
+    for (int i = 0; i < Courses.Count; i++)
+    {
+      if (Courses[i].Id == courseId)
+      {
+        Courses.RemoveAt(i);
+        return true;
+      }
+    }
 
-    _courses.Remove(course);
-    return true;
+    return false;
   }
 
-  public Course? GetCourseById(int id)
+  public Course GetCourseById(int id)
   {
-    return _courses.FirstOrDefault(c => c.Id == id);
+    foreach (Course course in Courses)
+    {
+      if (course.Id == id)
+      {
+        return course;
+      }
+    }
+
+    return null;
   }
 
   public List<Course> GetCoursesByTeacher(Teacher teacher)
   {
-    if (teacher == null) throw new ArgumentNullException(nameof(teacher));
+    if (teacher == null)
+    {
+      throw new ArgumentNullException(nameof(teacher));
+    }
 
-    return _courses
-        .Where(c => c.Teacher != null && c.Teacher.Id == teacher.Id)
-        .ToList();
+    List<Course> result = new List<Course>();
+
+    foreach (Course course in Courses)
+    {
+      if (course.Teacher != null && course.Teacher.Id == teacher.Id)
+      {
+        result.Add(course);
+      }
+    }
+
+    return result;
   }
 }

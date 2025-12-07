@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using CourseManagement.Models;
 using CourseManagement.Services;
 
@@ -7,23 +9,29 @@ public class Program
 {
   public static void Main(string[] args)
   {
-    var manager = new CourseManager();
+    CourseManager manager = new CourseManager();
 
-    var teacher = new Teacher(1, "Иванов Иван");
-    var student = new Student(1, "Петров Петр");
+    Teacher teacher = new Teacher(1, "Иванов Иван");
+    Student student = new Student(1, "Петров Петр");
 
-    var onlineCourse = new OnlineCourse(1, "Основы C#", "Backboost", "https://backboost.courses.itmo.ru/csharp");
+    OnlineCourse onlineCourse = new OnlineCourse(
+        1,
+        "Основы C#",
+        "Backboost",
+        "https://backboost.courses.itmo.ru/csharp");
+
     onlineCourse.AssignTeacher(teacher);
     onlineCourse.EnrollStudent(student);
 
     manager.AddCourse(onlineCourse);
 
-    var teacherCourses = manager.GetCoursesByTeacher(teacher);
+    List<Course> teacherCourses = manager.GetCoursesByTeacher(teacher);
 
     Console.WriteLine("Курсы преподавателя " + teacher.Name + ":");
-    foreach (var course in teacherCourses)
+    foreach (Course course in teacherCourses)
     {
       Console.WriteLine(course.GetCourseInfo());
+      course.PrintStudents();
     }
   }
 }

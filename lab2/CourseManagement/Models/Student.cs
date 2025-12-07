@@ -1,3 +1,5 @@
+using System;
+
 namespace CourseManagement.Models;
 
 public class Student
@@ -8,11 +10,16 @@ public class Student
   public Student(int id, string name)
   {
     if (string.IsNullOrWhiteSpace(name))
+    {
       throw new ArgumentException("Имя студента не может быть пустым", nameof(name));
+    }
 
     Id = id;
     Name = name;
   }
 
-  public override string ToString() => Name;
+  public override string ToString()
+  {
+    return Name;
+  }
 }

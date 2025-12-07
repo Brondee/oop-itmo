@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using CourseManagement.Models;
 using CourseManagement.Services;
 using Xunit;
@@ -8,23 +9,23 @@ namespace CourseManagement.Tests;
 public class CourseManagerTests
 {
   [Fact]
-  public void AddCourse_ShouldAddCourse()
+  public void ShouldAddCourse()
   {
-    var manager = new CourseManager();
-    var course = new OnlineCourse(1, "C#", "Moodle", "https://example.com");
+    CourseManager manager = new CourseManager();
+    OnlineCourse course = new OnlineCourse(1, "C#", "Moodle", "https://example.com");
 
     manager.AddCourse(course);
 
-    Assert.Single(manager.Courses);
+    Assert.Equal(1, manager.Courses.Count);
     Assert.Equal(course, manager.GetCourseById(1));
   }
 
   [Fact]
-  public void AddCourse_WithDuplicateId_ShouldThrow()
+  public void WithDuplicateId_ShouldThrowError()
   {
-    var manager = new CourseManager();
-    var c1 = new OnlineCourse(1, "C# 1", "Moodle", "https://example.com/1");
-    var c2 = new OfflineCourse(1, "C# 2", "Корпус A", "101");
+    CourseManager manager = new CourseManager();
+    OnlineCourse c1 = new OnlineCourse(1, "C# 1", "Moodle", "https://example.com/1");
+    OfflineCourse c2 = new OfflineCourse(1, "C# 2", "Корпус A", "101");
 
     manager.AddCourse(c1);
 
@@ -32,24 +33,24 @@ public class CourseManagerTests
   }
 
   [Fact]
-  public void RemoveCourse_ShouldReturnTrue_WhenCourseExists()
+  public void RemoveCourse_ShouldReturnTrue()
   {
-    var manager = new CourseManager();
-    var course = new OnlineCourse(1, "C#", "Moodle", "https://example.com");
+    CourseManager manager = new CourseManager();
+    OnlineCourse course = new OnlineCourse(1, "C#", "Moodle", "https://example.com");
     manager.AddCourse(course);
 
-    var result = manager.RemoveCourse(1);
+    bool result = manager.RemoveCourse(1);
 
     Assert.True(result);
-    Assert.Empty(manager.Courses);
+    Assert.Equal(0, manager.Courses.Count);
   }
 
   [Fact]
-  public void RemoveCourse_ShouldReturnFalse_WhenCourseDoesNotExist()
+  public void RemoveCourse_ShouldReturnFalse()
   {
-    var manager = new CourseManager();
+    CourseManager manager = new CourseManager();
 
-    var result = manager.RemoveCourse(42);
+    bool result = manager.RemoveCourse(42);
 
     Assert.False(result);
   }
@@ -57,14 +58,14 @@ public class CourseManagerTests
   [Fact]
   public void GetCoursesByTeacher_ShouldReturnOnlyCoursesOfThatTeacher()
   {
-    var manager = new CourseManager();
+    CourseManager manager = new CourseManager();
 
-    var teacher1 = new Teacher(1, "Иванов");
-    var teacher2 = new Teacher(2, "Петров");
+    Teacher teacher1 = new Teacher(1, "Иванов");
+    Teacher teacher2 = new Teacher(2, "Петров");
 
-    var course1 = new OnlineCourse(1, "C#", "Moodle", "https://example.com/1");
-    var course2 = new OfflineCourse(2, "Java", "Корпус B", "202");
-    var course3 = new OnlineCourse(3, "Python", "Moodle", "https://example.com/3");
+    OnlineCourse course1 = new OnlineCourse(1, "C#", "Moodle", "https://example.com/1");
+    OfflineCourse course2 = new OfflineCourse(2, "Java", "Корпус B", "202");
+    OnlineCourse course3 = new OnlineCourse(3, "Python", "Moodle", "https://example.com/3");
 
     course1.AssignTeacher(teacher1);
     course2.AssignTeacher(teacher1);
@@ -74,7 +75,7 @@ public class CourseManagerTests
     manager.AddCourse(course2);
     manager.AddCourse(course3);
 
-    var teacher1Courses = manager.GetCoursesByTeacher(teacher1);
+    List<Course> teacher1Courses = manager.GetCoursesByTeacher(teacher1);
 
     Assert.Equal(2, teacher1Courses.Count);
     Assert.Contains(course1, teacher1Courses);
