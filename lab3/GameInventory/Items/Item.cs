@@ -2,9 +2,9 @@ namespace GameInventory
 {
   public abstract class Item : IItem
   {
-    public string Name { get; protected set; }
-    public ItemType Type { get; protected set; }
-    public string Description { get; protected set; }
+    public string Name { get; }
+    public ItemType Type { get; }
+    public string Description { get; }
 
     protected Item(string name, ItemType type, string description)
     {

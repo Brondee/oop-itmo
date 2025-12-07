@@ -2,7 +2,9 @@ namespace GameInventory
 {
   public class Potion : Item, IUsable
   {
-    public int HealAmount { get; }
+    public int HealAmount { get; private set; }
+
+    public int Level { get; private set; }
 
     public Potion(string name, int healAmount, string description = "")
         : base(name, ItemType.Potion, description)

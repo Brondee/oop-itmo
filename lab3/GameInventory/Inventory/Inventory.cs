@@ -2,29 +2,27 @@ namespace GameInventory
 {
   public class Inventory
   {
-    private readonly List<IItem> _items = new List<IItem>();
-
-    public IReadOnlyCollection<IItem> Items => _items.AsReadOnly();
+    public List<IItem> Items { get; private set; } = new List<IItem>();
 
     public void AddItem(IItem item)
     {
       if (item == null) throw new ArgumentNullException(nameof(item));
-      _items.Add(item);
+      Items.Add(item);
     }
 
     public void RemoveItem(IItem item)
     {
-      _items.Remove(item);
+      Items.Remove(item);
     }
 
-    public IEnumerable<IItem> GetItemsByType(ItemType type)
+    public List<IItem> GetItemsByType(ItemType type)
     {
-      return _items.Where(i => i.Type == type);
+      return Items.Where(i => i.Type == type).ToList();
     }
 
     public IItem? FindByName(string name)
     {
-      return _items.FirstOrDefault(i => i.Name == name);
+      return Items.FirstOrDefault(i => i.Name == name);
     }
   }
 }

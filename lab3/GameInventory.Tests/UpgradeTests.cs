@@ -5,7 +5,7 @@ namespace GameInventory.Tests
   public class UpgradeTests
   {
     [Fact]
-    public void UpgradeWeapon_IncreasesDamageAndLevel()
+    public void IncreasesDamageAndLevel()
     {
       var weapon = new Weapon("Sword", damage: 10, level: 1);
       var builder = new WeaponBuilder();

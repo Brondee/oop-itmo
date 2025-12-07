@@ -5,7 +5,7 @@ namespace GameInventory.Tests
   public class PotionTests
   {
     [Fact]
-    public void UsePotion_HealsPlayer_AndRemovesFromInventory()
+    public void HealsPlayerAndRemovesFromInventory()
     {
       var player = new Player("Hero", maxHealth: 100);
       player.TakeDamage(50);

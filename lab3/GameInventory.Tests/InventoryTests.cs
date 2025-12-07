@@ -5,7 +5,7 @@ namespace GameInventory.Tests
   public class InventoryTests
   {
     [Fact]
-    public void AddItem_IncreasesItemsCount()
+    public void IncreasesItemsCount()
     {
       var inventory = new Inventory();
       var sword = new Weapon("Sword", 10);
@@ -17,7 +17,7 @@ namespace GameInventory.Tests
     }
 
     [Fact]
-    public void RemoveItem_RemovesItemFromInventory()
+    public void RemovesItemFromInventory()
     {
       var inventory = new Inventory();
       var sword = new Weapon("Sword", 10);
@@ -29,7 +29,7 @@ namespace GameInventory.Tests
     }
 
     [Fact]
-    public void GetItemsByType_ReturnsOnlyRequestedType()
+    public void ReturnsOnlyRequestedType()
     {
       var inventory = new Inventory();
       inventory.AddItem(new Weapon("Sword", 10));

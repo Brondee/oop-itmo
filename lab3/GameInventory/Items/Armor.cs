@@ -1,6 +1,6 @@
 namespace GameInventory
 {
-  public class Armor : Item, IUsable, IEquippable, IUpgradeable
+  public class Armor : Item, IUsable, IEquippable
   {
     public int Defense { get; private set; }
     public int Level { get; private set; }
@@ -12,20 +12,14 @@ namespace GameInventory
       Level = level;
     }
 
-    public void Use(Player player, Inventory inventory)
-    {
-      Equip(player);
-    }
-
     public void Equip(Player player)
     {
       player.EquipArmor(this);
     }
 
-    public void Upgrade()
+    public void Use(Player player, Inventory inventory)
     {
-      Level++;
-      Defense += 3;
+      Equip(player);
     }
   }
 }

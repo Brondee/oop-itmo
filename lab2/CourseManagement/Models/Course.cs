@@ -5,7 +5,7 @@ namespace CourseManagement.Models;
 
 public abstract class Course
 {
-  public List<Student> Students { get; } = new List<Student>();
+  public List<Student> Students { get; private set; } = new List<Student>();
 
   public int Id { get; }
   public string Title { get; }

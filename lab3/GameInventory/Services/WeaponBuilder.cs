@@ -25,7 +25,7 @@ namespace GameInventory
       return this;
     }
 
-    public WeaponBuilder SetDescription(string description)
+    public IWeaponBuilder SetDescription(string description)
     {
       _description = description;
       return this;
