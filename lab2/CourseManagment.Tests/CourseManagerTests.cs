@@ -56,7 +56,7 @@ public class CourseManagerTests
   }
 
   [Fact]
-  public void GetCoursesByTeacher_ShouldReturnOnlyCoursesOfThatTeacher()
+  public void ShouldReturnOnlyCoursesOfTeacher()
   {
     CourseManager manager = new CourseManager();
 
