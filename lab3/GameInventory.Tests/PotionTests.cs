@@ -1,24 +1,22 @@
 using Xunit;
+using GameInventory;
 
-namespace GameInventory.Tests
+public class PotionTests
 {
-  public class PotionTests
+  [Fact]
+  public void HealsPlayerAndRemovesFromInventory()
   {
-    [Fact]
-    public void HealsPlayerAndRemovesFromInventory()
-    {
-      var player = new Player("Hero", maxHealth: 100);
-      player.TakeDamage(50);
+    var player = new Player("Hero", maxHealth: 100);
+    player.TakeDamage(50);
 
-      var inventory = new Inventory();
-      var potion = new Potion("Small Potion", 30);
+    var inventory = new Inventory();
+    var potion = new Potion("Small Potion", 30);
 
-      inventory.AddItem(potion);
+    inventory.AddItem(potion);
 
-      potion.Use(player, inventory);
+    potion.Use(player, inventory);
 
-      Assert.Equal(80, player.Health);
-      Assert.DoesNotContain(potion, inventory.Items);
-    }
+    Assert.Equal(80, player.Health);
+    Assert.DoesNotContain(potion, inventory.Items);
   }
 }

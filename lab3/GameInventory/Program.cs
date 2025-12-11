@@ -8,7 +8,7 @@ namespace GameInventory
       Inventory inventory = new Inventory();
 
       Weapon sword = new Weapon("Железный меч", 10);
-      Armor armor = new Armor("Кожаная броня", 3);
+      Armor armor = new Armor("Деревянная броня", 3);
       Potion potion = new Potion("Маленькое зелье", 20);
 
       inventory.AddItem(sword);

@@ -1,6 +1,6 @@
 using System;
 
-namespace CourseManagement.Models;
+namespace CourseManagement;
 
 public class OnlineCourse : Course
 {
@@ -12,12 +12,12 @@ public class OnlineCourse : Course
   {
     if (string.IsNullOrWhiteSpace(platform))
     {
-      throw new ArgumentException("Платформа не может быть пустой", nameof(platform));
+      throw new ArgumentNullException(nameof(platform));
     }
 
     if (string.IsNullOrWhiteSpace(url))
     {
-      throw new ArgumentException("Url не может быть пустым", nameof(url));
+      throw new ArgumentNullException(nameof(url));
     }
 
     Platform = platform;

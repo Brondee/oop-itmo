@@ -1,6 +1,6 @@
 using System;
 
-namespace CourseManagement.Models;
+namespace CourseManagement;
 
 public class OfflineCourse : Course
 {
@@ -12,12 +12,12 @@ public class OfflineCourse : Course
   {
     if (string.IsNullOrWhiteSpace(building))
     {
-      throw new ArgumentException("Здание не может быть пустым", nameof(building));
+      throw new ArgumentNullException(nameof(building));
     }
 
     if (string.IsNullOrWhiteSpace(classroom))
     {
-      throw new ArgumentException("Аудитория не может быть пустой", nameof(classroom));
+      throw new ArgumentNullException(nameof(classroom));
     }
 
     Building = building;

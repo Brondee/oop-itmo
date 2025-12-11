@@ -1,6 +1,6 @@
 using System;
 
-namespace CourseManagement.Models;
+namespace CourseManagement;
 
 public class Student
 {
@@ -11,7 +11,7 @@ public class Student
   {
     if (string.IsNullOrWhiteSpace(name))
     {
-      throw new ArgumentException("Имя студента не может быть пустым", nameof(name));
+      throw new ArgumentNullException(nameof(name));
     }
 
     Id = id;

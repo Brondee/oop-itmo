@@ -1,10 +1,7 @@
 using System;
 using System.Collections.Generic;
-using CourseManagement.Models;
-using CourseManagement.Services;
+using CourseManagement;
 using Xunit;
-
-namespace CourseManagement.Tests;
 
 public class CourseManagerTests
 {

@@ -2,7 +2,7 @@ namespace GameInventory
 {
   public class WeaponBuilder : IWeaponBuilder
   {
-    private string _name = "Unnamed";
+    private string _name = "";
     private int _damage = 0;
     private int _level = 1;
     private string _description = "";

@@ -6,7 +6,7 @@ namespace GameInventory
     public ItemType Type { get; }
     public string Description { get; }
 
-    protected Item(string name, ItemType type, string description)
+    public Item(string name, ItemType type, string description)
     {
       Name = name;
       Type = type;

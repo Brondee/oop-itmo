@@ -1,8 +1,7 @@
 using System;
 using System.Collections.Generic;
-using CourseManagement.Models;
 
-namespace CourseManagement.Services;
+namespace CourseManagement;
 
 public class CourseManager
 {

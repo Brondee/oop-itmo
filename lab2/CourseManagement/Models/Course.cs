@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace CourseManagement.Models;
+namespace CourseManagement;
 
 public abstract class Course
 {
@@ -11,11 +11,11 @@ public abstract class Course
   public string Title { get; }
   public Teacher Teacher { get; private set; }
 
-  protected Course(int id, string title)
+  public Course(int id, string title)
   {
     if (string.IsNullOrWhiteSpace(title))
     {
-      throw new ArgumentException("Название курса не может быть пустым", nameof(title));
+      throw new ArgumentNullException(nameof(title));
     }
 
     Id = id;

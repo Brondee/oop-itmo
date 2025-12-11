@@ -1,7 +1,5 @@
-using CourseManagement.Models;
+using CourseManagement;
 using Xunit;
-
-namespace CourseManagement.Tests;
 
 public class CourseTests
 {

@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using CourseManagement.Models;
-using CourseManagement.Services;
 
 namespace CourseManagement;
 

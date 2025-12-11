@@ -2,7 +2,7 @@ namespace GameInventory
 {
   public class ItemUpgradeService
   {
-    private readonly IWeaponBuilder _weaponBuilder;
+    private IWeaponBuilder _weaponBuilder;
 
     public ItemUpgradeService(IWeaponBuilder weaponBuilder)
     {
