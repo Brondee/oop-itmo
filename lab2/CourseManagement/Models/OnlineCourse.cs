@@ -10,16 +10,6 @@ public class OnlineCourse : Course
   public OnlineCourse(int id, string title, string platform, string url)
       : base(id, title)
   {
-    if (string.IsNullOrWhiteSpace(platform))
-    {
-      throw new ArgumentNullException(nameof(platform));
-    }
-
-    if (string.IsNullOrWhiteSpace(url))
-    {
-      throw new ArgumentNullException(nameof(url));
-    }
-
     Platform = platform;
     Url = url;
   }

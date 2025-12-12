@@ -13,32 +13,17 @@ public abstract class Course
 
   public Course(int id, string title)
   {
-    if (string.IsNullOrWhiteSpace(title))
-    {
-      throw new ArgumentNullException(nameof(title));
-    }
-
     Id = id;
     Title = title;
   }
 
   public void AssignTeacher(Teacher teacher)
   {
-    if (teacher == null)
-    {
-      throw new ArgumentNullException(nameof(teacher));
-    }
-
     Teacher = teacher;
   }
 
   public void EnrollStudent(Student student)
   {
-    if (student == null)
-    {
-      throw new ArgumentNullException(nameof(student));
-    }
-
     foreach (Student current in Students)
     {
       if (current.Id == student.Id)

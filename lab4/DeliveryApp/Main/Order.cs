@@ -24,11 +24,6 @@ public abstract class Order
 
   public decimal GetTotalPrice()
   {
-    if (PriceCalculator == null)
-    {
-      throw new InvalidOperationException("Калькулятор цены не настроен");
-    }
-
     return PriceCalculator.CalculateTotal(this);
   }
 }

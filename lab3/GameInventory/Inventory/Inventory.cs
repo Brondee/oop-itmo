@@ -6,7 +6,6 @@ namespace GameInventory
 
     public void AddItem(IItem item)
     {
-      if (item == null) throw new ArgumentNullException(nameof(item));
       Items.Add(item);
     }
 

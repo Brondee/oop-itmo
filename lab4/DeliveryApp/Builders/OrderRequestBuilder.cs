@@ -33,11 +33,6 @@ public class OrderRequestBuilder
 
   public OrderRequest Build()
   {
-    if (_items.Count == 0)
-    {
-      throw new InvalidOperationException("В заказе должен быть хотя бы один продукт");
-    }
-
     return new OrderRequest(_customerName, _address, _isExpress, _items);
   }
 }

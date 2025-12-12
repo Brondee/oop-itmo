@@ -10,16 +10,6 @@ public class OfflineCourse : Course
   public OfflineCourse(int id, string title, string building, string classroom)
       : base(id, title)
   {
-    if (string.IsNullOrWhiteSpace(building))
-    {
-      throw new ArgumentNullException(nameof(building));
-    }
-
-    if (string.IsNullOrWhiteSpace(classroom))
-    {
-      throw new ArgumentNullException(nameof(classroom));
-    }
-
     Building = building;
     Classroom = classroom;
   }

@@ -9,11 +9,6 @@ public class CourseManager
 
   public void AddCourse(Course course)
   {
-    if (course == null)
-    {
-      throw new ArgumentNullException(nameof(course));
-    }
-
     foreach (Course existing in Courses)
     {
       if (existing.Id == course.Id)
@@ -54,11 +49,6 @@ public class CourseManager
 
   public List<Course> GetCoursesByTeacher(Teacher teacher)
   {
-    if (teacher == null)
-    {
-      throw new ArgumentNullException(nameof(teacher));
-    }
-
     List<Course> result = new List<Course>();
 
     foreach (Course course in Courses)

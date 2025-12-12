@@ -12,10 +12,5 @@ namespace GameInventory
       Type = type;
       Description = description;
     }
-
-    public override string ToString()
-    {
-      return $"{Name} ({Type})";
-    }
   }
 }

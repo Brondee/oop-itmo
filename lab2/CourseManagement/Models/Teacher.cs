@@ -9,11 +9,6 @@ public class Teacher
 
   public Teacher(int id, string name)
   {
-    if (string.IsNullOrWhiteSpace(name))
-    {
-      throw new ArgumentNullException(nameof(name));
-    }
-
     Id = id;
     Name = name;
   }
